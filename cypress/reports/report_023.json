@@ -1,0 +1,260 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-09T07:33:59.620Z",
+    "end": "2022-05-09T07:34:20.295Z",
+    "duration": 20675,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7a6f3858-7650-4c4c-b518-c2d97886dc12",
+      "title": "",
+      "fullFile": "cypress/integration/TestCase/login.js",
+      "file": "cypress/integration/TestCase/login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+          "title": "Launch App",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Lunch Website",
+              "fullTitle": "Launch App Lunch Website",
+              "timedOut": null,
+              "duration": 5855,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://practice.automationtesting.in/');\ncy.viewport(1920, 1080);",
+              "err": {},
+              "uuid": "43b0d7fa-1993-4b21-8541-197010fff846",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Reload Page",
+              "fullTitle": "Launch App Reload Page",
+              "timedOut": null,
+              "duration": 1838,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.reload();",
+              "err": {},
+              "uuid": "d32c0505-c640-42a2-9a81-090d169bad56",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Click on my account link",
+              "fullTitle": "Launch App Click on my account link",
+              "timedOut": null,
+              "duration": 2783,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\ncy.get('ul.main-nav>li:nth-of-type(2)>a').click(); //Verify my account link display or not \ncy.url().should('include', '/my-account');\ncy.reload().url().should('include', '/my-account');",
+              "err": {},
+              "uuid": "0cf45b9b-c4a5-4bcd-a9af-047daa348302",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Forward & Backward browser option verify",
+              "fullTitle": "Launch App Forward & Backward browser option verify",
+              "timedOut": null,
+              "duration": 2865,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\ncy.go('back'); //cy.go('-1')   backward browser\n//chaning method also do that  \n// cy.visit('http://practice.automationtesting.in/').go('back')\ncy.wait(200); //cy.go('1')   Forward browser\ncy.go('forward');",
+              "err": {},
+              "uuid": "60e83b79-e45a-4350-85f7-e72bf19aedf9",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify lenth of links",
+              "fullTitle": "Launch App Verify lenth of links",
+              "timedOut": null,
+              "duration": 216,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080); //should & get method verify length \ncy.get('ul#main-nav li a').should('have.length', '6'); //Find method verify length \ncy.get('ul.social-links li').find('a[href]').should('have.length', '5');",
+              "err": {},
+              "uuid": "1ae86ad3-997a-4563-96a2-1c616ebabb80",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Subscribed Here",
+              "fullTitle": "Launch App Subscribed Here",
+              "timedOut": null,
+              "duration": 571,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080); //Within method verify length \ncy.get('form#mc4wp-form-1').within(() => {\n  cy.get(\"input[type='email']\").type('preyas.rana@zymr.com');\n});",
+              "err": {},
+              "uuid": "a9565699-4cac-4499-80a9-f39f1504fa92",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Login Case",
+              "fullTitle": "Launch App Verify Login Case",
+              "timedOut": null,
+              "duration": 2691,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080); //Verify Page login title Should be visible or not \ncy.get('div[class=\"u-column1 col-1\"] h2').should('be.visible').and('contain', 'Login').and('have.length', '1');\ncy.login('KIBQOQBYZW@gmail.com', 'dxVB58@&');",
+              "err": {},
+              "uuid": "c27a10cb-228e-4b6c-8272-57c4e1c4e909",
+              "parentUUID": "11d26eba-54aa-4b68-90ad-862df6a6535d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "43b0d7fa-1993-4b21-8541-197010fff846",
+            "d32c0505-c640-42a2-9a81-090d169bad56",
+            "0cf45b9b-c4a5-4bcd-a9af-047daa348302",
+            "60e83b79-e45a-4350-85f7-e72bf19aedf9",
+            "1ae86ad3-997a-4563-96a2-1c616ebabb80",
+            "a9565699-4cac-4499-80a9-f39f1504fa92",
+            "c27a10cb-228e-4b6c-8272-57c4e1c4e909"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16819,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d3862a6c-f38b-4a2b-92d9-8bc0d5348ba6",
+          "title": "Address Section",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Click on Address link",
+              "fullTitle": "Address Section Click on Address link",
+              "timedOut": null,
+              "duration": 2088,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1920, 1080);\ncy.wait(500);\ncy.get('nav.woocommerce-MyAccount-navigation>ul>li:nth-of-type(4)>a').click(); //cy.wait(500)\n//Verify address link display or not \n//cy.url().should('include', '/edit-address')",
+              "err": {},
+              "uuid": "d35b8b0e-65ed-44b3-8b87-93144cb088e8",
+              "parentUUID": "d3862a6c-f38b-4a2b-92d9-8bc0d5348ba6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d35b8b0e-65ed-44b3-8b87-93144cb088e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2088,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

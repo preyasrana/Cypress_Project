@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-09T07:23:07.381Z",
+    "end": "2022-05-09T07:23:25.678Z",
+    "duration": 18297,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c5042fa6-17be-48ba-9160-3290b3fa5966",
+      "title": "",
+      "fullFile": "cypress/integration/TestCase/search_common.js",
+      "file": "cypress/integration/TestCase/search_common.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8c754282-f5ec-4ef0-9a6f-c3a02dbb87ff",
+          "title": "Launch App",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Lunch Website",
+              "fullTitle": "Launch App Lunch Website",
+              "timedOut": null,
+              "duration": 9837,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://automationpractice.com/index.php');\ncy.viewport(1920, 1080);",
+              "err": {},
+              "uuid": "a2d2cab6-dce0-4136-bf95-eb71acda761e",
+              "parentUUID": "8c754282-f5ec-4ef0-9a6f-c3a02dbb87ff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User should search product",
+              "fullTitle": "Launch App User should search product",
+              "timedOut": null,
+              "duration": 4315,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.Searchproduct('Dress');\ncy.get('.lighter').should('contain.text', 'Dress');",
+              "err": {},
+              "uuid": "d4576ec7-0e88-4ad8-a520-738ded6fbe93",
+              "parentUUID": "8c754282-f5ec-4ef0-9a6f-c3a02dbb87ff",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a2d2cab6-dce0-4136-bf95-eb71acda761e",
+            "d4576ec7-0e88-4ad8-a520-738ded6fbe93"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14152,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
