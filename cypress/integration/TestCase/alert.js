@@ -9,7 +9,6 @@ describe('Alert App', () => {
         cy.on('window:alert', (str) => {
             expect(str).to.equal('I am an alert box!')
         })
-
     })
 
     it('Confirmation scenario', () => {
@@ -23,7 +22,7 @@ describe('Alert App', () => {
 
     })
 
-    
+
 
 })
 
