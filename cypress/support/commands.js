@@ -30,6 +30,30 @@ Cypress.Commands.add('Searchproduct', (productname)=> {
 
 })
 
+Cypress.Commands.add('login', (username, password) => {
+  cy.request({
+    method: 'POST',
+    url: '/login',
+    body: { username, password },
+  }).then(({ body }) => {
+    window.localStorage.setItem('authToken', body.token)
+  })
+})
+
+// save session data at the end of an it()
+Cypress.Commands.add("saveLocalStorage", () => {
+    Object.keys(localStorage).forEach((key) => {
+      LOCAL_STORAGE_MEMORY[key] = localStorage[key];
+    });
+  });
+  
+  // restore session data at the beginning of an it()
+  Cypress.Commands.add("restoreLocalStorage", () => {
+    Object.keys(LOCAL_STORAGE_MEMORY).forEach((key) => {
+      localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
+    });
+  });
+
 
 //
 //

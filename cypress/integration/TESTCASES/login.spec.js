@@ -13,7 +13,7 @@ describe('Launch App', function () {
 
         login.click_Loginlink()
         login.login_btn()
-        login.errormessage().should('have.text', 'Error: Username is required.')
+        login.errormessage().should('have.text', 'Error1: Username is required.')
     })
 
     it('Only Fillup Username & click on login button', function () {
