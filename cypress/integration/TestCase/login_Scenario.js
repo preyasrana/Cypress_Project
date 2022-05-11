@@ -63,12 +63,7 @@ describe('Launch App', function () {
             .click().url().should('include', '/downloads/')
     })
 
-    it('Click on Download link', function () {
-        cy.viewport(1920, 1080)
-        cy.wait(500)
-        cy.get('nav.woocommerce-MyAccount-navigation>ul>li:nth-of-type(3)>a')
-            .click().url().should('include', '/downloads/')
-    })
+
 
 
 })

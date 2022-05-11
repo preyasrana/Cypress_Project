@@ -12,10 +12,6 @@ class LoginPage {
 
     }
 
-    visit_baseurl() {
-        cy.visit('http://practice.automationtesting.in/')
-    }
-
     click_Loginlink() {
         cy.get(this.lt_loginlink).click()
     }
@@ -39,7 +35,7 @@ class LoginPage {
     errormessage() {
 
         return cy.get(this.lt_errormessage)
-       
+
     }
 
     login_btn() {
