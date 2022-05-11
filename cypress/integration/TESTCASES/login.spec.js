@@ -1,20 +1,23 @@
 
 import login from '../PageObjects/LoginPage'
-
+import myaccount from '../PageObjects/Myaccount'
 
 describe('Launch App', function () {
 
-    it('Without Entering Any Data Click on Login button', function () {
+    beforeEach(function () {
         cy.viewport(1920, 1080)
-        login.visit_baseurl()
+        cy.visit(Cypress.env('fronturl'))
+    })
+
+    it('Without Entering Any Data Click on Login button', function () {
+
         login.click_Loginlink()
         login.login_btn()
         login.errormessage().should('have.text', 'Error: Username is required.')
     })
 
     it('Only Fillup Username & click on login button', function () {
-        cy.viewport(1920, 1080)
-        login.visit_baseurl()
+
         login.click_Loginlink()
         login.fillusername('KIBQOQBYZW@gmail.com')
         login.login_btn()
@@ -22,8 +25,7 @@ describe('Launch App', function () {
     })
 
     it('Invalid Username & Password', function () {
-        cy.viewport(1920, 1080)
-        login.visit_baseurl()
+
         login.click_Loginlink()
         login.fillusername('testuser')
         login.fillpassword('test@&')
@@ -32,21 +34,18 @@ describe('Launch App', function () {
             .should('have.text', 'ERROR: The password you entered for the username testuser is incorrect. Lost your password?')
     })
 
-    
-
 
     it('Valid Login Test', function () {
-        cy.viewport(1920, 1080)
 
-        login.visit_baseurl()
         login.click_Loginlink()
         login.fillusername('KIBQOQBYZW@gmail.com')
         login.fillpassword('dxVB58@&')
         login.login_btn()
+        myaccount.VerifyPageurl().should('include', '/my-account/')
+    })
 
-        cy.url().should('include', '/my-account/')
-        cy.get('nav.woocommerce-MyAccount-navigation>ul>li').should('have.length', '6')
-
+    //Mostly Used for TearDown Part
+    after(function () {
     })
 
 })
