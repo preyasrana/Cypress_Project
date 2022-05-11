@@ -15,7 +15,7 @@
 
 import 'cypress-file-upload';
 
-Cypress.Commands.add('login', (username, password)=> {
+Cypress.Commands.add('login',(username, password)=>{
 
     cy.get('#username').type(username)
     cy.get('input#password').type(password)
