@@ -8,7 +8,7 @@ class LoginPage {
         this.lt_username = "#username";
         this.lt_password = "input#password";
         this.lt_loginbtn = "input[type='submit'][name='login']";
-
+        this.lt_errormessage = ".woocommerce-error li";
 
     }
 
@@ -36,7 +36,13 @@ class LoginPage {
         return this
     }
 
-    login_btn(value) {
+    errormessage() {
+
+        return cy.get(this.lt_errormessage)
+       
+    }
+
+    login_btn() {
 
         const button = cy.get(this.lt_loginbtn)
         button.click()
