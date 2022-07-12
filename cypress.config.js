@@ -5,9 +5,9 @@ module.exports = defineConfig({
     fronturl: 'http://practice.automationtesting.in/',
   },
   chromeWebSecurity: false,
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 8000,
   execTimeout: 60000,
-  pageLoadTimeout: 60000,
+  pageLoadTimeout: 10000,
   requestTimeout: 10000,
   responseTimeout: 10000,
   reporter: 'mochawesome',
@@ -20,6 +20,8 @@ module.exports = defineConfig({
     charts: true,
   },
   video: true,
+  viewportHeight: 768,
+  viewportWidth: 1366,
   projectId: '2p9vy2',
   e2e: {
     // We've imported your old cypress plugins here.

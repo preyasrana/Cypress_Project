@@ -18,7 +18,6 @@ describe('test suite', function () {
 
     it('first test case', function () {
 
-        cy.viewport(1366, 768)
         cy.visit('https://www.rahulshettyacademy.com/angularpractice/')
 
         homepage.fillname().type(this.data.name)
@@ -39,9 +38,20 @@ describe('test suite', function () {
 
         })
 
+        productpage.btn_shoppingcheckout().click()
+
+
+
+
         productpage.btncheckout().click()
-
-
+        productpage.fillcountry().type("India")
+        productpage.checkbox_terms().check({ force: true })
+        productpage.purchased_order().click()
+        productpage.success_message().then(function (element) {
+            cy.log(element.text())
+            const actualtext = element.text()
+            expect(actualtext.includes("Success! Thank you! Your order will be delivered in next few weeks")).to.be.true
+        })
 
     })
 
