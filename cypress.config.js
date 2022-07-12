@@ -3,6 +3,7 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   env: {
     fronturl: 'http://practice.automationtesting.in/',
+    weburl: 'https://www.rahulshettyacademy.com/angularpractice/',
   },
   chromeWebSecurity: false,
   defaultCommandTimeout: 8000,

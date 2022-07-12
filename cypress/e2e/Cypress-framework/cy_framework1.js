@@ -18,7 +18,7 @@ describe('test suite', function () {
 
     it('first test case', function () {
 
-        cy.visit('https://www.rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.env('weburl'))
 
         homepage.fillname().type(this.data.name)
         homepage.selectgender().select(this.data.gender)
@@ -40,6 +40,31 @@ describe('test suite', function () {
 
         productpage.btn_shoppingcheckout().click()
 
+        var sum = 0;
+        productpage.cartproduct_totalprice().each(($el, index, $list) => {
+
+            const price = $el.text()
+            var res = price.split(" ")
+            res = res[1].trim()
+            cy.log(res)
+
+            sum = Number(sum) + Number(res)
+
+        }).then(function () {
+            cy.log(sum)
+        })
+
+
+        productpage.carttotal().then(function (totalprice) {
+
+            const total_price = totalprice.text()
+            var total = total_price.split(" ")
+            var total = total[1].trim()
+            cy.log(total)
+
+            expect(Number(total)).to.equal(Number(sum))
+
+        })
 
 
 

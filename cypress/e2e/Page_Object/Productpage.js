@@ -12,8 +12,8 @@ class Productpage {
         this.lt_chktermscondition = 'input[id="checkbox2"]';
         this.lt_purchasedorder = 'input[class="btn btn-success btn-lg"]';
         this.lt_gettext = 'div[class="alert alert-success alert-dismissible"]';
-
-
+        this.lt_cartProduct_totalprice = 'tr td:nth-child(4) strong';
+        this.lt_carttotal = 'td[class="text-right"] h3 strong';
 
 
     }
@@ -45,6 +45,17 @@ class Productpage {
     success_message() {
 
         return cy.get(this.lt_gettext)
+    }
+
+    cartproduct_totalprice() {
+
+        return cy.get(this.lt_cartProduct_totalprice)
+
+    }
+
+    carttotal() {
+
+        return cy.get(this.lt_carttotal)
     }
 
 
