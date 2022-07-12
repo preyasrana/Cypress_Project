@@ -1,6 +1,8 @@
 {
     "name": "jenika",
     "gender": "Female",
-    "blank_name" : ""
-
+    "productName": [
+        "Blackberry",
+        "iphone X"
+    ]
 }

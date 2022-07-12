@@ -23,6 +23,17 @@ Cypress.Commands.add('login',(username, password)=>{
 
 })
 
+//select product method
+Cypress.Commands.add('selectproduct',(productname) =>{
+
+  cy.get("h4[class='card-title']").each(($el, index, $list) => {
+    if ($el.text().includes(productname)) {
+        cy.get('button.btn.btn-info').eq(index).click()
+    }
+  })
+})
+
+
 Cypress.Commands.add('Searchproduct', (productname)=> {
 
     cy.get('.search_query').type(productname)
@@ -53,6 +64,11 @@ Cypress.Commands.add("saveLocalStorage", () => {
       localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
     });
   });
+
+
+
+
+
 
 
 //
