@@ -1,5 +1,9 @@
 /// <reference types ="Cypress"/>
 
+
+import homepage from '../Page_Object/Homepage'
+import productpage from '../Page_Object/Productpage'
+
 describe('test suite', function () {
 
     before(() => {
@@ -17,28 +21,26 @@ describe('test suite', function () {
         cy.viewport(1366, 768)
         cy.visit('https://www.rahulshettyacademy.com/angularpractice/')
 
-        cy.get('input[name="name"]:nth-child(2)').type(this.data.name)
-        cy.get('select[id="exampleFormControlSelect1"]').select(this.data.gender)
+        homepage.fillname().type(this.data.name)
+        homepage.selectgender().select(this.data.gender)
 
-
-        cy.get('input[name="name"]:nth-child(1)').should('have.value', this.data.name)
+        homepage.databinding().should('have.value', this.data.name)
         //attribute for validation
-        cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', '2')
+        homepage.fillname().should('have.attr', 'minlength', '2')
+        homepage.employee_status_Entrepreneur().should('be.disabled')
+        homepage.shoplink().click().debug()
 
-        cy.get('input[id="inlineRadio3"]').should('be.disabled')
-
-
-        cy.get('a[href="/angularpractice/shop"]').click()
-
-
+        //cy.pause()
         //Parameterized test with multiple data
         this.data.productName.forEach(function (element) {
-
 
             //reusabled *** select product method
             cy.selectproduct(element)
 
         })
+
+        productpage.btncheckout().click()
+
 
 
     })
