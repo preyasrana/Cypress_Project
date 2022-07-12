@@ -1,8 +1,8 @@
 /// <reference types ="Cypress"/>
 
 
-import homepage from '../Page_Object/Homepage'
-import productpage from '../Page_Object/Productpage'
+import homepage from '../../Page_Object/Homepage'
+import productpage from '../../Page_Object/Productpage'
 
 describe('test suite', function () {
 
@@ -18,7 +18,7 @@ describe('test suite', function () {
 
     it('first test case', function () {
 
-        cy.visit(Cypress.env('weburl'))
+        cy.visit(Cypress.env('weburl') + "/angularpractice/")
 
         homepage.fillname().type(this.data.name)
         homepage.selectgender().select(this.data.gender)
