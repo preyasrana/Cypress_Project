@@ -1,8 +1,8 @@
 /// <reference types ="Cypress"/>
 
 
-import homepage from '../../Page_Object/Homepage'
-import productpage from '../../Page_Object/Productpage'
+import homepage from '../Page_Object/Homepage'
+import productpage from '../Page_Object/Productpage'
 
 describe('test suite', function () {
 
