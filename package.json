@@ -5,11 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run --browser chrome",
+    "open": "./node_modules/.bin/cypress open",
+    "testrun": "./node_modules/.bin/cypress run",
+    "headed-testrun": "npm run testrun -- --headed",
+    "chrome-headed": "npm run testrun -- --browser chrome",
+    "chrome-browser": "npm run testrun -- --browser chrome --headed",
+    "record-dashboard": "npm run testrun -- --record --key 8c13f4ca-29b8-4667-90fa-8a62c9f80dfd --reporter mochawesome",
+    "sampletest-cases": "npm run testrun -- --spec \"cypress/e2e/sample_testcases/*\"",
     "merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/output.json",
     "generate_mochawesome_report": "marge cypress/reports/output.json --reportDir ./ --inline",
     "final_report": "npm run merge && npm run generate_mochawesome_report"
+  },
+  "retries": {
+    "runMode": 1
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +26,7 @@
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.0.1",
+    "mocha": "^10.0.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.1"
   }

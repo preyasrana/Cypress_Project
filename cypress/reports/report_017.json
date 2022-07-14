@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-14T12:13:31.826Z",
+    "end": "2022-07-14T12:13:40.306Z",
+    "duration": 8480,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "add2198f-8d4e-4e40-8b35-58c4d1cc3996",
+      "title": "",
+      "fullFile": "cypress/e2e/sample_testcases/dropdown.js",
+      "file": "cypress/e2e/sample_testcases/dropdown.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a42359a3-9bbc-4829-8044-feb4bc383c38",
+          "title": "Drodown Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "static dropdown",
+              "fullTitle": "Drodown Test static dropdown",
+              "timedOut": null,
+              "duration": 6746,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// test step for URL launching\ncy.viewport(1366, 768);\ncy.visit(\"https://www.rahulshettyacademy.com/AutomationPractice/\");\ncy.wait(200);\ncy.get('select[name=\"dropdown-class-example\"]').select('option2').should('have.value', 'option2');\ncy.get('input[id=\"autocomplete\"]').type('ind');\ncy.get('li.ui-menu-item').each(($el, index, $list) => {\n  const headervalue = $el.find('div').text();\n  cy.log('find dropdown item::-->' + headervalue);\n  if ($el.text() === \"India\") {\n    cy.wrap($el).click();\n  }\n}); //validation if selected value should  be appear or not \ncy.get('input[id=\"autocomplete\"]').should('have.value', 'India'); //hide & show objects\ncy.get('#displayed-text').should('be.visible');\ncy.get('#hide-textbox').click();\ncy.get('#displayed-text').should('not.be.visible');\ncy.get('#show-textbox').click();\ncy.get('#displayed-text').should('be.visible');",
+              "err": {},
+              "uuid": "fb3d5f75-55e8-49c2-aa9a-b7b709e39438",
+              "parentUUID": "a42359a3-9bbc-4829-8044-feb4bc383c38",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fb3d5f75-55e8-49c2-aa9a-b7b709e39438"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6746,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

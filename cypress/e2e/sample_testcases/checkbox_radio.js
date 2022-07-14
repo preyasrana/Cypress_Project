@@ -7,6 +7,7 @@ describe('Tutorialspoint Test', function () {
       // test step for URL launching
       cy.viewport(1366, 768)
       cy.visit("https://www.rahulshettyacademy.com/AutomationPractice/");
+      //cy.visit("https://www.rahulshettyacademy.com/");
       cy.wait(200)
 
       cy.get('#checkBoxOption1').check().should('be.checked')

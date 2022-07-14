@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-07-13T11:19:06.173Z",
-    "end": "2022-07-13T11:19:14.008Z",
-    "duration": 7835,
+    "start": "2022-07-14T11:34:44.259Z",
+    "end": "2022-07-14T11:34:51.172Z",
+    "duration": 6913,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "efa6ff4e-3bb8-40f1-894d-3cbd3599ec31",
+      "uuid": "f5321039-9627-45ac-8396-9165800f6e84",
       "title": "",
       "fullFile": "cypress/e2e/Cypress-framework/cy_framework1.js",
       "file": "cypress/e2e/Cypress-framework/cy_framework1.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1c3ff083-b196-43e3-8bde-ddc6b1ba44c6",
+          "uuid": "cd211b30-4ad9-47e3-98d6-d2f980bc7f5b",
           "title": "test suite",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "first test case",
               "fullTitle": "test suite first test case",
               "timedOut": null,
-              "duration": 4801,
+              "duration": 4925,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit(Cypress.env('weburl') + \"/angularpractice/\");\n_Homepage.default.fillname().type(this.data.name);\n_Homepage.default.selectgender().select(this.data.gender);\n_Homepage.default.databinding().should('have.value', this.data.name); //attribute for validation\n\n_Homepage.default.fillname().should('have.attr', 'minlength', '2');\n_Homepage.default.employee_status_Entrepreneur().should('be.disabled');\n_Homepage.default.shoplink().click().debug(); //cy.pause()\n//Parameterized test with multiple data\n\nthis.data.productName.forEach(function (element) {\n  //reusabled *** select product method\n  cy.selectproduct(element);\n});\n_Productpage.default.btn_shoppingcheckout().click();\nvar sum = 0;\n_Productpage.default.cartproduct_totalprice().each(($el, index, $list) => {\n  const price = $el.text();\n  var res = price.split(\" \");\n  res = res[1].trim();\n  cy.log(res);\n  sum = Number(sum) + Number(res);\n}).then(function () {\n  cy.log(sum);\n});\n_Productpage.default.carttotal().then(function (totalprice) {\n  const total_price = totalprice.text();\n  var total = total_price.split(\" \");\n  var total = total[1].trim();\n  cy.log(total);\n  expect(Number(total)).to.equal(Number(sum));\n});\n_Productpage.default.btncheckout().click();\n_Productpage.default.fillcountry().type(\"India\");\n_Productpage.default.checkbox_terms().check({\n  force: true\n});\n_Productpage.default.purchased_order().click();\n_Productpage.default.success_message().then(function (element) {\n  cy.log(element.text());\n  const actualtext = element.text();\n  expect(actualtext.includes(\"Success! Thank you! Your order will be delivered in next few weeks\")).to.be.true;\n});",
               "err": {},
-              "uuid": "72618262-5a67-4eff-9e41-829cddec7172",
-              "parentUUID": "1c3ff083-b196-43e3-8bde-ddc6b1ba44c6",
+              "uuid": "a4f83e11-ee26-4020-8a13-73a10eb3d249",
+              "parentUUID": "cd211b30-4ad9-47e3-98d6-d2f980bc7f5b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "72618262-5a67-4eff-9e41-829cddec7172"
+            "a4f83e11-ee26-4020-8a13-73a10eb3d249"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4801,
+          "duration": 4925,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2022-07-14T11:45:49.701Z",
-    "end": "2022-07-14T11:45:50.632Z",
-    "duration": 931,
+    "start": "2022-07-14T12:23:38.403Z",
+    "end": "2022-07-14T12:23:53.164Z",
+    "duration": 14761,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,41 +18,41 @@
   },
   "results": [
     {
-      "uuid": "894ec797-4530-4ccb-a56d-1b9b0e33072e",
+      "uuid": "7252da59-9bbf-4482-9ef7-4d0adcb6580b",
       "title": "",
-      "fullFile": "cypress/e2e/API_Testing/Get_API.js",
-      "file": "cypress/e2e/API_Testing/Get_API.js",
+      "fullFile": "cypress/e2e/sample_testcases/checkbox_radio.js",
+      "file": "cypress/e2e/sample_testcases/checkbox_radio.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "644181b1-9d36-4424-aae6-70cb1f9b8406",
-          "title": "API Testing App",
+          "uuid": "6527bbc9-b9c8-499b-afae-f97ee837e8ae",
+          "title": "Tutorialspoint Test",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Get Users",
-              "fullTitle": "API Testing App Get Users",
+              "title": "Scenario 1",
+              "fullTitle": "Tutorialspoint Test Scenario 1",
               "timedOut": null,
-              "duration": 765,
+              "duration": 12325,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.request({\n  method: 'GET',\n  url: 'https://gorest.co.in/public-api/users/2',\n  headers: {\n    'authorization': \"Bearer\" + accesstoken\n  }\n}).then(resp => {\n  expect(resp.status).equal(200);\n  expect(resp.body.data.name).to.eq('Rajinder Dwivedi');\n});",
+              "code": "// test step for URL launching\ncy.viewport(1366, 768); // cy.visit(\"https://www.rahulshettyacademy.com/AutomationPractice/\");\ncy.visit(\"https://www.rahulshettyacademy.com/\");\ncy.wait(200);\ncy.get('#checkBoxOption1').check().should('be.checked').and('have.value', 'option1');\ncy.get('#checkBoxOption1').uncheck().should('not.be.checked');\ncy.get(\"div[id='checkbox-example'] input[type='checkbox']\").check(['option2', 'option3']); //radio button property \ncy.get('input[value=\"radio2\"]').check().should('be.checked').and('have.value', 'radio2');",
               "err": {
-                "message": "AssertionError: expected undefined to equal 'Rajinder Dwivedi'",
-                "estack": "AssertionError: expected undefined to equal 'Rajinder Dwivedi'\n    at Context.eval (https://reqres.in/__cypress/tests?p=cypress/e2e/API_Testing/Get_API.js:110:38)",
+                "message": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `#checkBoxOption1`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `#checkBoxOption1`, but never found it.\n    at Context.eval (https://www.rahulshettyacademy.com/__cypress/tests?p=cypress/e2e/sample_testcases/checkbox_radio.js:108:8)",
                 "diff": null
               },
-              "uuid": "8c8e7ce3-71ba-4eb9-a450-6becdfa31ffd",
-              "parentUUID": "644181b1-9d36-4424-aae6-70cb1f9b8406",
+              "uuid": "e44eff0c-674a-4196-a8d8-ff3538a8861f",
+              "parentUUID": "6527bbc9-b9c8-499b-afae-f97ee837e8ae",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "8c8e7ce3-71ba-4eb9-a450-6becdfa31ffd"
+            "e44eff0c-674a-4196-a8d8-ff3538a8861f"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 765,
+          "duration": 12325,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
