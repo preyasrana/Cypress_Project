@@ -15,29 +15,29 @@
 
 import 'cypress-file-upload';
 
-Cypress.Commands.add('login',(username, password)=>{
+Cypress.Commands.add('login', (username, password) => {
 
-    cy.get('#username').type(username)
-    cy.get('input#password').type(password)
-    cy.get('input[type="submit"][name="login"]').click()
+  cy.get('#username').type(username)
+  cy.get('input#password').type(password)
+  cy.get('input[type="submit"][name="login"]').click()
 
 })
 
 //select product method
-Cypress.Commands.add('selectproduct',(productname) =>{
+Cypress.Commands.add('selectproduct', (productname) => {
 
   cy.get("h4[class='card-title']").each(($el, index, $list) => {
     if ($el.text().includes(productname)) {
-        cy.get('button.btn.btn-info').eq(index).click()
+      cy.get('button.btn.btn-info').eq(index).click()
     }
   })
 })
 
 
-Cypress.Commands.add('Searchproduct', (productname)=> {
+Cypress.Commands.add('Searchproduct', (productname) => {
 
-    cy.get('.search_query').type(productname)
-    cy.get("button[name='submit_search']").click()
+  cy.get('.search_query').type(productname)
+  cy.get("button[name='submit_search']").click()
 
 })
 
@@ -53,17 +53,17 @@ Cypress.Commands.add('login', (username, password) => {
 
 // save session data at the end of an it()
 Cypress.Commands.add("saveLocalStorage", () => {
-    Object.keys(localStorage).forEach((key) => {
-      LOCAL_STORAGE_MEMORY[key] = localStorage[key];
-    });
+  Object.keys(localStorage).forEach((key) => {
+    LOCAL_STORAGE_MEMORY[key] = localStorage[key];
   });
-  
-  // restore session data at the beginning of an it()
-  Cypress.Commands.add("restoreLocalStorage", () => {
-    Object.keys(LOCAL_STORAGE_MEMORY).forEach((key) => {
-      localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
-    });
+});
+
+// restore session data at the beginning of an it()
+Cypress.Commands.add("restoreLocalStorage", () => {
+  Object.keys(LOCAL_STORAGE_MEMORY).forEach((key) => {
+    localStorage.setItem(key, LOCAL_STORAGE_MEMORY[key]);
   });
+});
 
 
 

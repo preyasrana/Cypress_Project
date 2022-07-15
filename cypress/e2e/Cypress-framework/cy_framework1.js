@@ -27,7 +27,7 @@ describe('test suite', function () {
         //attribute for validation
         homepage.fillname().should('have.attr', 'minlength', '2')
         homepage.employee_status_Entrepreneur().should('be.disabled')
-        homepage.shoplink().click().debug()
+        homepage.shoplink().click()
 
         //cy.pause()
         //Parameterized test with multiple data

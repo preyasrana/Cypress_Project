@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress')
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = defineConfig({
   env: {
@@ -28,9 +29,14 @@ module.exports = defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
+
       return require('./cypress/plugins/index.js')(on, config)
+
+      //on('file:preprocessor', cucumber())
     },
     baseUrl: 'https://reqres.in/api',
-    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    // specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+
+    specPattern: 'cypress/e2e/BDD/**/*.feature'
   },
 })
