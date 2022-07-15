@@ -20,7 +20,8 @@
     "runMode": 1
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/BDD"
   },
   "author": "",
   "license": "ISC",

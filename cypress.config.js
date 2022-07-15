@@ -35,8 +35,8 @@ module.exports = defineConfig({
       //on('file:preprocessor', cucumber())
     },
     baseUrl: 'https://reqres.in/api',
-    // specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    //specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
 
-    specPattern: 'cypress/e2e/BDD/**/*.feature'
+    specPattern: 'cypress/e2e/BDD/*.feature'
   },
 })

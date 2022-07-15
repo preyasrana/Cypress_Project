@@ -1,8 +1,8 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
 
-import homepage from '../../../../Page_Object/Homepage'
-import productpage from '../../../../Page_Object/Productpage'
+import homepage from '../../Page_Object/Homepage'
+import productpage from '../../Page_Object/Productpage'
 var sum = 0;
 
 Given('open Ecommerce Page', function () {
