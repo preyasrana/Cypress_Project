@@ -1,13 +1,14 @@
 Feature: End to End Ecommerce Validation
   application regression
 
+  @Regression
   Scenario: Ecommerce Product Delivery
     Given open Ecommerce Page
     When add items to cart
     And Validate Cart Product total
     Then Select Country submit and Verify thank you
 
-
+  @Smoke
   Scenario:filling form to shop
     Given open Ecommerce Page
     When I fill up form details
