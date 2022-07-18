@@ -73,4 +73,27 @@ And('Validate Cart Product total', function () {
     })
 
 
+    When('I fill up form details', function (dataTable) {
+
+        // homepage.fillname().type(this.data.name)
+        // homepage.selectgender().select(this.data.gender)
+
+        homepage.fillname().type(dataTable.rawTable[1][0])
+        homepage.selectgender().select(dataTable.rawTable[1][1])
+    })
+
+    Then('Validate Form behaviour', function () {
+        homepage.databinding().should('have.value', this.data.name)
+        //attribute for validation
+        homepage.fillname().should('have.attr', 'minlength', '2')
+        homepage.employee_status_Entrepreneur().should('be.disabled')
+
+    })
+
+    And('Select Shop page', () => {
+
+        homepage.shoplink().click()
+    })
+
+
 })
