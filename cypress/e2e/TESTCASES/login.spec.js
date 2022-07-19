@@ -41,10 +41,12 @@ describe('Launch App', function () {
         login.fillusername('KIBQOQBYZW@gmail.com')
         login.fillpassword('dxVB58@&')
         login.login_btn()
+        //cy.clearCookie()
         myaccount.VerifyPageurl().should('include', '/my-account/')
+
     })
 
-    
+
 
     //Mostly Used for TearDown Part
     after(function () {

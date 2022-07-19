@@ -30,7 +30,7 @@ describe('API Testing App', () => {
             expect(resp.status).equal(200)
             expect(resp.body.data[0]).has.property('first_name', 'Michael')
             expect(resp.body.data[1]).has.property('last_name', 'Ferguson')
-            
+
 
         })
     })

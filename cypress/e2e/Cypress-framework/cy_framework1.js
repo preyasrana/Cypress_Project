@@ -18,12 +18,26 @@ describe('test suite', function () {
 
     it('first test case', function () {
 
+        // cy.clock()
+
         cy.visit(Cypress.env('weburl') + "/angularpractice/")
 
-        homepage.fillname().type(this.data.name)
-        homepage.selectgender().select(this.data.gender)
+        // cy.tick(1000)
 
-        homepage.databinding().should('have.value', this.data.name)
+
+        cy.get('div[class="form-check form-check-inline"] label').filter(':contains("disabled")').should('have.length', '1')
+
+        cy.get('footer[class="py-5 bg-dark"]').find('p').each(($el, index, $list) => {
+
+            const value = $el.text()
+            cy.log(value)
+
+        })
+
+        homepage.fillname().type(this.data.name).and('be.visible').as('name')
+        homepage.selectgender().select(this.data.gender).and('be.visible').as('gender')
+
+        homepage.databinding().should('have.value', this.data.name).and('be.visible')
         //attribute for validation
         homepage.fillname().should('have.attr', 'minlength', '2')
         homepage.employee_status_Entrepreneur().should('be.disabled')
@@ -65,7 +79,6 @@ describe('test suite', function () {
             expect(Number(total)).to.equal(Number(sum))
 
         })
-
 
 
         productpage.btncheckout().click()
