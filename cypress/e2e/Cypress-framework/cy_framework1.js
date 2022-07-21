@@ -25,8 +25,10 @@ describe('test suite', function () {
         // cy.tick(1000)
 
 
+        //using filter through verify element
         cy.get('div[class="form-check form-check-inline"] label').filter(':contains("disabled")').should('have.length', '1')
 
+        //find with element get
         cy.get('footer[class="py-5 bg-dark"]').find('p').each(($el, index, $list) => {
 
             const value = $el.text()
@@ -34,7 +36,16 @@ describe('test suite', function () {
 
         })
 
+        //first element to click
+        cy.get('div[class="form-check form-check-inline"] label').first().click()
+
         homepage.fillname().type(this.data.name).and('be.visible').as('name')
+
+
+        //focused with blur
+        //homepage.fillname().focused().type(this.data.name).and('be.visible').as('name').blur()
+
+        homepage.fillpassword().type('test123').blur()
         homepage.selectgender().select(this.data.gender).and('be.visible').as('gender')
 
         homepage.databinding().should('have.value', this.data.name).and('be.visible')

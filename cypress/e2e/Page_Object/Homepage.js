@@ -5,6 +5,7 @@ class Homepage {
 
         //Defined Locator
         this.lt_name = 'input[name="name"]:nth-child(2)';
+        this.lt_pwd = '#exampleInputPassword1';
         this.lt_gender = 'select[id="exampleFormControlSelect1"]';
         this.lt_data_binding = 'input[name="name"]:nth-child(1)';
         this.lt_empstatus_Entrepreneur = 'input[id="inlineRadio3"]';
@@ -16,6 +17,13 @@ class Homepage {
         return cy.get(this.lt_name)
 
     }
+
+    fillpassword() {
+
+        return cy.get(this.lt_pwd)
+    }
+
+
 
     selectgender() {
 
